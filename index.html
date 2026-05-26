@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Saneksha Learning &amp; Support Centre — Nurturing every unique bloom</title>
 <meta name="description" content="A specialised remediation centre in Guwahati for children with Specific Learning Difficulties (SLD) and ADHD, ages 5–14. Warm, evidence-based support that helps every child bloom." />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..800,0..100&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600&display=swap" rel="stylesheet">
@@ -134,14 +137,11 @@ header {
   color: var(--aubergine);
   font-weight: 500;
 }
-.logo-img {
-  height: 56px;
-  width: auto;
+.logo-mark-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
   display: block;
-}
-
-@media (max-width: 720px) {
-  .logo-img { height: 44px; }
 }
 .logo-mark {
   width: 36px; height: 36px;
@@ -319,12 +319,34 @@ header {
 .hero-art {
   position: relative;
   height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hero-blob {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 60% 40%, var(--lavender) 0%, var(--lavender-mist) 35%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 45%, var(--lavender) 0%, var(--lavender-mist) 40%, transparent 75%);
   filter: blur(20px);
+}
+.hero-logo {
+  position: relative;
+  width: 92%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  z-index: 2;
+  animation: float 7s ease-in-out infinite;
+  transform-origin: center;
+  filter: drop-shadow(0 18px 40px rgba(74, 44, 104, 0.18));
+}
+.hero-decor {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
 }
 .hero-svg {
   position: relative;
@@ -345,7 +367,7 @@ header {
   50% { opacity: 1; }
 }
 
-.orchid { animation: float 7s ease-in-out infinite; transform-origin: center bottom; }
+.orchid { animation: float 7s ease-in-out infinite; transform-origin: center bottom; } /* legacy, unused */
 .bubble-1 { animation: drift 6s ease-in-out infinite; }
 .bubble-2 { animation: drift 8s ease-in-out infinite 1s; }
 .bubble-3 { animation: drift 7s ease-in-out infinite 2s; }
@@ -357,6 +379,7 @@ header {
   .hero { padding: 50px 0 70px; }
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-art { height: 380px; order: -1; }
+  .hero-logo { max-width: 340px; }
   .hero-stats { gap: 28px; flex-wrap: wrap; }
 }
 
@@ -1162,8 +1185,11 @@ footer {
 <header>
   <div class="wrap nav">
     <a href="#" class="logo">
-      <img src="sanekshalogo.jpeg" alt="Saneksha Learning & Support Centre" class="logo-img">
-      
+      <img src="assets/logo-mark.png" alt="" class="logo-mark-img">
+      <div>
+        Saneksha
+        <small>Learning &amp; Support Centre</small>
+      </div>
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
@@ -1215,93 +1241,41 @@ footer {
 
     <div class="hero-art">
       <div class="hero-blob"></div>
-      <svg class="hero-svg" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+      <img src="assets/logo-full-transparent.png" alt="Saneksha Learning &amp; Support Centre" class="hero-logo">
+      <!-- Floating decorative bubbles around the logo -->
+      <svg class="hero-decor" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
-          <radialGradient id="petal" cx="50%" cy="50%">
-            <stop offset="0%" stop-color="#E4D5F2"/>
-            <stop offset="60%" stop-color="#B89DD6"/>
-            <stop offset="100%" stop-color="#6B3F8E"/>
-          </radialGradient>
-          <radialGradient id="petalCenter" cx="50%" cy="50%">
-            <stop offset="0%" stop-color="#F4B89A"/>
-            <stop offset="100%" stop-color="#E89773"/>
-          </radialGradient>
-          <linearGradient id="stem" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#A8B89A"/>
-            <stop offset="100%" stop-color="#6B7A5A"/>
-          </linearGradient>
           <radialGradient id="bubbleGrad" cx="35%" cy="35%">
-            <stop offset="0%" stop-color="#F1E8FA" stop-opacity="0.9"/>
-            <stop offset="100%" stop-color="#B89DD6" stop-opacity="0.4"/>
+            <stop offset="0%" stop-color="#F1E8FA" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#B89DD6" stop-opacity="0.45"/>
           </radialGradient>
         </defs>
 
-        <!-- Decorative leaves bottom -->
-        <g opacity="0.6">
-          <path d="M40 540 Q60 480 100 500 Q80 540 40 540 Z" fill="#A8B89A"/>
-          <path d="M460 560 Q440 500 400 520 Q420 560 460 560 Z" fill="#A8B89A"/>
-        </g>
-
-        <!-- Stem -->
-        <path d="M250 580 Q255 480 250 380 Q245 300 255 240" stroke="url(#stem)" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <!-- Leaves -->
-        <path d="M250 480 Q210 470 200 440 Q230 445 250 470 Z" fill="#A8B89A" opacity="0.85"/>
-        <path d="M252 420 Q290 410 305 380 Q275 388 252 410 Z" fill="#A8B89A" opacity="0.85"/>
-        <path d="M250 360 Q220 350 215 320 Q240 330 250 355 Z" fill="#A8B89A" opacity="0.85"/>
-
-        <!-- Orchid head -->
-        <g class="orchid" transform="translate(250, 200)">
-          <!-- Outer petals -->
-          <ellipse cx="0" cy="-50" rx="38" ry="62" fill="url(#petal)" opacity="0.9"/>
-          <ellipse cx="-70" cy="-10" rx="62" ry="38" fill="url(#petal)" opacity="0.9" transform="rotate(-30)"/>
-          <ellipse cx="70" cy="-10" rx="62" ry="38" fill="url(#petal)" opacity="0.9" transform="rotate(30)"/>
-          <ellipse cx="-40" cy="50" rx="48" ry="38" fill="url(#petal)" opacity="0.95" transform="rotate(-20)"/>
-          <ellipse cx="40" cy="50" rx="48" ry="38" fill="url(#petal)" opacity="0.95" transform="rotate(20)"/>
-          <!-- Inner lip -->
-          <ellipse cx="0" cy="20" rx="32" ry="42" fill="#6B3F8E" opacity="0.85"/>
-          <ellipse cx="0" cy="15" rx="22" ry="30" fill="url(#petalCenter)"/>
-          <!-- Center -->
-          <circle cx="0" cy="10" r="6" fill="#2B1B3D"/>
-          <circle cx="-3" cy="8" r="2" fill="#F7F2EA" opacity="0.7"/>
-
-          <!-- Bud -->
-          <g transform="translate(70, -90)">
-            <ellipse cx="0" cy="0" rx="14" ry="22" fill="url(#petal)" opacity="0.8"/>
-            <ellipse cx="0" cy="-6" rx="8" ry="14" fill="#B89DD6"/>
-          </g>
-        </g>
-
         <!-- Floating thought bubbles -->
         <g class="bubble-1">
-          <circle cx="120" cy="160" r="34" fill="url(#bubbleGrad)" opacity="0.7"/>
-          <!-- book icon inside -->
-          <g transform="translate(120, 160)" stroke="#4A2C68" stroke-width="1.5" fill="none">
+          <circle cx="70" cy="130" r="34" fill="url(#bubbleGrad)"/>
+          <g transform="translate(70, 130)" stroke="#4A2C68" stroke-width="1.5" fill="none">
             <path d="M-12 -6 L-12 6 L0 8 L12 6 L12 -6 L0 -4 Z"/>
             <line x1="0" y1="-4" x2="0" y2="8"/>
           </g>
         </g>
 
         <g class="bubble-2">
-          <circle cx="400" cy="190" r="28" fill="url(#bubbleGrad)" opacity="0.7"/>
-          <!-- star -->
-          <path d="M400 178 L403 187 L412 187 L405 192 L408 201 L400 196 L392 201 L395 192 L388 187 L397 187 Z" fill="#E89773"/>
+          <circle cx="430" cy="180" r="28" fill="url(#bubbleGrad)"/>
+          <path d="M430 168 L433 177 L442 177 L435 182 L438 191 L430 186 L422 191 L425 182 L418 177 L427 177 Z" fill="#E89773"/>
         </g>
 
         <g class="bubble-3">
-          <circle cx="80" cy="320" r="22" fill="url(#bubbleGrad)" opacity="0.7"/>
-          <!-- heart -->
-          <path d="M80 318 C77 314, 71 314, 71 320 C71 326, 80 332, 80 332 C80 332, 89 326, 89 320 C89 314, 83 314, 80 318 Z" fill="#B89DD6" opacity="0.9"/>
+          <circle cx="60" cy="380" r="22" fill="url(#bubbleGrad)"/>
+          <path d="M60 378 C57 374, 51 374, 51 380 C51 386, 60 392, 60 392 C60 392, 69 386, 69 380 C69 374, 63 374, 60 378 Z" fill="#B89DD6" opacity="0.9"/>
         </g>
 
         <!-- Sparkles -->
         <g fill="#E89773">
-          <path class="sparkle" d="M350 100 L353 108 L361 111 L353 114 L350 122 L347 114 L339 111 L347 108 Z"/>
-          <path class="sparkle-2" d="M180 80 L182 85 L187 87 L182 89 L180 94 L178 89 L173 87 L178 85 Z" transform="scale(0.7)" />
-          <path class="sparkle-3" d="M440 360 L443 368 L451 371 L443 374 L440 382 L437 374 L429 371 L437 368 Z" transform="scale(0.6)"/>
+          <path class="sparkle" d="M380 110 L383 118 L391 121 L383 124 L380 132 L377 124 L369 121 L377 118 Z"/>
+          <path class="sparkle-2" d="M125 70 L127 75 L132 77 L127 79 L125 84 L123 79 L118 77 L123 75 Z"/>
+          <path class="sparkle-3" d="M450 400 L453 408 L461 411 L453 414 L450 422 L447 414 L439 411 L447 408 Z" transform="scale(0.7) translate(120, 120)"/>
         </g>
-
-        <!-- Hand-drawn underline -->
-        <path d="M180 590 Q250 580 320 590" stroke="#B89DD6" stroke-width="2" fill="none" opacity="0.5" stroke-linecap="round"/>
       </svg>
     </div>
   </div>
@@ -1764,11 +1738,7 @@ footer {
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo">
-          <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
-            <path d="M20 8 C16 8, 14 12, 16 16 C12 14, 8 16, 10 20 C8 22, 10 26, 14 24 C12 28, 16 32, 20 28 C24 32, 28 28, 26 24 C30 26, 32 22, 30 20 C32 16, 28 14, 24 16 C26 12, 24 8, 20 8 Z" fill="#B89DD6" opacity="0.85"/>
-            <circle cx="20" cy="20" r="3" fill="#4A2C68"/>
-            <path d="M20 28 Q20 34 22 38" stroke="#6B7A5A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          </svg>
+          <img src="assets/logo-mark.png" alt="" class="logo-mark-img">
           <div>
             Saneksha
             <small>Learning &amp; Support Centre</small>
