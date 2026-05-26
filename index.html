@@ -331,14 +331,18 @@ header {
 }
 .hero-logo {
   position: relative;
-  width: 92%;
-  max-width: 520px;
+  width: 100%;
+  max-width: 580px;
   height: auto;
   display: block;
   z-index: 2;
   animation: float 7s ease-in-out infinite;
   transform-origin: center;
-  filter: drop-shadow(0 18px 40px rgba(74, 44, 104, 0.18));
+  filter: drop-shadow(0 18px 40px rgba(74, 44, 104, 0.12));
+  /* Blend the cream video bg into the cream page bg */
+  mix-blend-mode: multiply;
+  /* Crop bottom-right corner where watermark lives */
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 85%, 85% 100%, 0 100%);
 }
 .hero-decor {
   position: absolute;
