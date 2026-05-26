@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Saneksha Learning &amp; Support Centre — Nurturing every unique bloom</title>
+<meta name="description" content="A specialised remediation centre in Guwahati for children with Specific Learning Difficulties (SLD) and ADHD, ages 5–14. Warm, evidence-based support that helps every child bloom." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..800,0..100&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* Palette — cream, aubergine, lavender washes, peach warmth */
+  --cream: #F7F2EA;
+  --cream-deep: #EFE7DB;
+  --ink: #2B1B3D;
+  --aubergine: #4A2C68;
+  --plum: #6B3F8E;
+  --lilac: #B89DD6;
+  --lavender: #E4D5F2;
+  --lavender-mist: #F1E8FA;
+  --peach: #F4B89A;
+  --peach-deep: #E89773;
+  --sage: #A8B89A;
+  --leaf: #6B7A5A;
+  --line: rgba(43, 27, 61, 0.12);
+
+  --serif: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --serif-italic: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Nunito Sans', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--cream);
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 400;
+  overflow-x: hidden;
+  /* Subtle paper grain */
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(184, 157, 214, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(244, 184, 154, 0.06) 0%, transparent 45%);
+}
+
+/* ---------- Paper grain overlay ---------- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.17 0 0 0 0 0.11 0 0 0 0 0.24 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  letter-spacing: -0.01em;
+}
+
+.serif-italic {
+  font-family: var(--serif-italic);
+  font-style: italic;
+  font-weight: 400;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- Layout helpers ---------- */
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 720px) {
+  .wrap { padding: 0 22px; }
+  body { font-size: 16px; }
+}
+
+/* ---------- Top announcement bar ---------- */
+.announce {
+  background: var(--aubergine);
+  color: var(--lavender-mist);
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: relative;
+  z-index: 10;
+}
+.announce span { color: var(--peach); margin: 0 8px; }
+
+/* ---------- Header ---------- */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(247, 242, 234, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 50;
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--serif);
+  font-size: 24px;
+  letter-spacing: 0.04em;
+  color: var(--aubergine);
+  font-weight: 500;
+}
+.logo-mark {
+  width: 36px; height: 36px;
+}
+.logo small {
+  display: block;
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  color: var(--plum);
+  margin-top: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 500;
+}
+.nav-links a {
+  position: relative;
+  padding: 4px 0;
+  color: var(--ink);
+  transition: color 0.2s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1px;
+  background: var(--peach-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-links a:hover { color: var(--aubergine); }
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--aubergine);
+  color: var(--cream);
+}
+.btn-primary:hover {
+  background: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(43, 27, 61, 0.25);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--aubergine);
+  border: 1.5px solid var(--aubergine);
+}
+.btn-outline:hover {
+  background: var(--aubergine);
+  color: var(--cream);
+}
+.btn-peach {
+  background: var(--peach);
+  color: var(--ink);
+}
+.btn-peach:hover {
+  background: var(--peach-deep);
+  transform: translateY(-2px);
+}
+
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; }
+
+@media (max-width: 900px) {
+  .nav-links, .nav .btn { display: none; }
+  .mobile-toggle { display: block; color: var(--aubergine); }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  padding: 90px 0 120px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--plum);
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+.eyebrow::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--plum);
+}
+
+.hero h1 {
+  font-size: clamp(48px, 6.2vw, 86px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+  font-variation-settings: "opsz" 144, "SOFT" 80, "wght" 380;
+}
+.hero h1 em {
+  font-family: var(--serif-italic);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--plum);
+}
+
+.hero p.lead {
+  font-size: 19px;
+  line-height: 1.65;
+  color: rgba(43, 27, 61, 0.78);
+  max-width: 540px;
+  margin-bottom: 40px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+.stat-num {
+  font-family: var(--serif);
+  font-size: 42px;
+  color: var(--aubergine);
+  line-height: 1;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--plum);
+  font-weight: 600;
+}
+
+/* Hero illustration */
+.hero-art {
+  position: relative;
+  height: 600px;
+}
+.hero-blob {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, var(--lavender) 0%, var(--lavender-mist) 35%, transparent 70%);
+  filter: blur(20px);
+}
+.hero-svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(-1deg); }
+}
+@keyframes drift {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-20px) translateX(8px); }
+}
+@keyframes shimmer {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.orchid { animation: float 7s ease-in-out infinite; transform-origin: center bottom; }
+.bubble-1 { animation: drift 6s ease-in-out infinite; }
+.bubble-2 { animation: drift 8s ease-in-out infinite 1s; }
+.bubble-3 { animation: drift 7s ease-in-out infinite 2s; }
+.sparkle { animation: shimmer 3s ease-in-out infinite; }
+.sparkle-2 { animation: shimmer 3s ease-in-out infinite 0.8s; }
+.sparkle-3 { animation: shimmer 3s ease-in-out infinite 1.6s; }
+
+@media (max-width: 900px) {
+  .hero { padding: 50px 0 70px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-art { height: 380px; order: -1; }
+  .hero-stats { gap: 28px; flex-wrap: wrap; }
+}
+
+/* ---------- Section base ---------- */
+section { padding: 110px 0; position: relative; }
+@media (max-width: 900px) { section { padding: 70px 0; } }
+
+.section-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--plum);
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: block;
+}
+.section-title {
+  font-size: clamp(36px, 4.2vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin-bottom: 24px;
+  max-width: 720px;
+  font-variation-settings: "opsz" 144, "SOFT" 60, "wght" 380;
+}
+.section-title em {
+  font-family: var(--serif-italic);
+  font-style: italic;
+  color: var(--plum);
+}
+.section-intro {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(43, 27, 61, 0.75);
+  max-width: 600px;
+  margin-bottom: 60px;
+}
+
+/* Botanical divider */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 60px auto;
+  max-width: 200px;
+}
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ---------- About section ---------- */
+.about {
+  background: var(--cream-deep);
+  position: relative;
+}
+.about::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 0; right: 0;
+  height: 60px;
+  background: radial-gradient(ellipse at center top, var(--cream) 0%, transparent 70%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: linear-gradient(160deg, var(--lavender) 0%, var(--lilac) 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(74, 44, 104, 0.2);
+}
+.about-visual svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.about-text h2 {
+  margin-bottom: 32px;
+}
+.about-text p {
+  font-size: 17px;
+  line-height: 1.75;
+  margin-bottom: 22px;
+  color: rgba(43, 27, 61, 0.85);
+}
+.about-text p:first-of-type {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--aubergine);
+  font-variation-settings: "opsz" 24, "SOFT" 60;
+}
+
+.beliefs {
+  margin-top: 36px;
+  display: grid;
+  gap: 14px;
+}
+.belief {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-style: italic;
+  color: var(--aubergine);
+}
+.belief-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--peach);
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 50px; }
+  .about-visual { max-width: 360px; margin: 0 auto; }
+}
+
+/* ---------- Services / What We Offer ---------- */
+.services-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 70px;
+}
+.services-header p {
+  font-size: 17px;
+  color: rgba(43, 27, 61, 0.75);
+  line-height: 1.7;
+}
+@media (max-width: 900px) {
+  .services-header { grid-template-columns: 1fr; gap: 24px; }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--lilac);
+  box-shadow: 0 24px 50px rgba(74, 44, 104, 0.12);
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: var(--tint, var(--lavender-mist));
+  opacity: 0.5;
+  transition: transform 0.4s ease;
+}
+.service-card:hover::before { transform: scale(1.4); }
+
+/* Card spans */
+.service-card.wide { grid-column: span 3; }
+.service-card.tall { grid-column: span 3; }
+.service-card.med { grid-column: span 2; }
+
+.service-icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  color: var(--aubergine);
+}
+
+.service-card h3 {
+  font-size: 24px;
+  margin-bottom: 14px;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+  font-variation-settings: "opsz" 36, "SOFT" 60, "wght" 420;
+}
+.service-card p {
+  font-size: 15px;
+  color: rgba(43, 27, 61, 0.7);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+}
+.tag {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 11px;
+  background: rgba(74, 44, 104, 0.06);
+  color: var(--aubergine);
+  border-radius: 999px;
+}
+
+@media (max-width: 1000px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-card.wide, .service-card.tall, .service-card.med { grid-column: span 1; }
+}
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Approach (How we work) ---------- */
+.approach {
+  background: var(--ink);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.approach::before {
+  content: '';
+  position: absolute;
+  top: -200px; left: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--plum) 0%, transparent 60%);
+  opacity: 0.35;
+  filter: blur(40px);
+}
+.approach::after {
+  content: '';
+  position: absolute;
+  bottom: -200px; right: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, var(--lilac) 0%, transparent 60%);
+  opacity: 0.18;
+  filter: blur(40px);
+}
+.approach .wrap { position: relative; z-index: 2; }
+
+.approach .section-eyebrow { color: var(--peach); }
+.approach .section-title { color: var(--cream); }
+.approach .section-title em { color: var(--lilac); }
+.approach .section-intro { color: rgba(247, 242, 234, 0.75); }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+.step {
+  padding: 40px 32px;
+  border: 1px solid rgba(247, 242, 234, 0.15);
+  border-radius: 20px;
+  background: rgba(247, 242, 234, 0.03);
+  backdrop-filter: blur(10px);
+  position: relative;
+  transition: all 0.3s ease;
+}
+.step:hover {
+  border-color: var(--peach);
+  background: rgba(247, 242, 234, 0.06);
+  transform: translateY(-4px);
+}
+.step-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 64px;
+  color: var(--lilac);
+  line-height: 1;
+  margin-bottom: 16px;
+  font-weight: 300;
+  opacity: 0.6;
+}
+.step h3 {
+  font-size: 26px;
+  color: var(--cream);
+  margin-bottom: 14px;
+  font-variation-settings: "opsz" 36, "SOFT" 60;
+}
+.step p {
+  font-size: 15px;
+  color: rgba(247, 242, 234, 0.7);
+  line-height: 1.65;
+}
+@media (max-width: 900px) {
+  .steps { grid-template-columns: 1fr; }
+}
+
+/* ---------- Why us ---------- */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 50px;
+}
+.pillar {
+  padding: 28px 24px;
+  background: var(--lavender-mist);
+  border-radius: 16px;
+  border: 1px solid var(--lavender);
+}
+.pillar-icon {
+  width: 36px; height: 36px;
+  color: var(--aubergine);
+  margin-bottom: 14px;
+}
+.pillar h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-variation-settings: "opsz" 24, "SOFT" 60, "wght" 500;
+}
+.pillar p {
+  font-size: 14px;
+  color: rgba(43, 27, 61, 0.7);
+  line-height: 1.55;
+}
+
+.quote-card {
+  background: var(--aubergine);
+  color: var(--cream);
+  padding: 48px 44px;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.quote-card::before {
+  content: '"';
+  position: absolute;
+  top: -30px;
+  left: 20px;
+  font-family: var(--serif);
+  font-size: 200px;
+  color: var(--lilac);
+  opacity: 0.3;
+  line-height: 1;
+}
+.quote-card .quote-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  position: relative;
+  font-variation-settings: "opsz" 36, "SOFT" 80;
+}
+.quote-card .quote-attr {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--peach);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .why-grid { grid-template-columns: 1fr; gap: 50px; }
+  .pillars { grid-template-columns: 1fr; }
+}
+
+/* ---------- For Parents ---------- */
+.parents {
+  background: linear-gradient(180deg, var(--cream-deep) 0%, var(--lavender-mist) 100%);
+  position: relative;
+}
+.parents-content {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.parents .section-title {
+  margin-left: auto;
+  margin-right: auto;
+}
+.parents-letter {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--aubergine);
+  margin-bottom: 28px;
+  font-variation-settings: "opsz" 24, "SOFT" 60, "wght" 380;
+}
+.parents p.sub {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(43, 27, 61, 0.75);
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+.signature {
+  font-family: var(--serif-italic);
+  font-style: italic;
+  font-size: 28px;
+  color: var(--plum);
+  margin-top: 32px;
+}
+.signature small {
+  display: block;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+/* ---------- FAQ ---------- */
+.faq {
+  background: var(--cream-deep);
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: start;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.faq-item {
+  border-bottom: 1px solid var(--line);
+  padding: 0;
+}
+.faq-item:first-child { border-top: 1px solid var(--line); }
+
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--ink);
+  text-align: left;
+  padding: 28px 50px 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  font-weight: 400;
+  font-variation-settings: "opsz" 24, "SOFT" 60, "wght" 420;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--aubergine); }
+.faq-toggle {
+  width: 28px; height: 28px;
+  border: 1px solid var(--aubergine);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  color: var(--aubergine);
+}
+.faq-item.open .faq-toggle {
+  background: var(--aubergine);
+  color: var(--cream);
+  transform: rotate(45deg);
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(43, 27, 61, 0.75);
+}
+.faq-item.open .faq-a {
+  max-height: 400px;
+  padding: 0 50px 32px 0;
+}
+
+@media (max-width: 900px) {
+  .faq-grid { grid-template-columns: 1fr; gap: 40px; }
+  .faq-q { font-size: 19px; padding: 22px 40px 22px 0; }
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  background: var(--ink);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.contact::before {
+  content: '';
+  position: absolute;
+  top: -150px; right: -150px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--plum) 0%, transparent 60%);
+  opacity: 0.3;
+  filter: blur(40px);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+}
+.contact .section-title { color: var(--cream); }
+.contact .section-title em { color: var(--lilac); }
+.contact .section-eyebrow { color: var(--peach); }
+
+.contact-info p {
+  color: rgba(247, 242, 234, 0.75);
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+.contact-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 28px;
+}
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(247, 242, 234, 0.12);
+}
+.contact-detail .icon {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--aubergine);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.contact-detail .label {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--peach);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.contact-detail .value {
+  display: block;
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--cream);
+  font-variation-settings: "opsz" 24, "SOFT" 60;
+  line-height: 1.4;
+  margin-bottom: 2px;
+  text-decoration: none;
+  word-break: break-word;
+  transition: color 0.2s;
+}
+a.value:hover { color: var(--peach); }
+.contact-detail .value-sub {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: rgba(247, 242, 234, 0.55);
+  letter-spacing: 0.02em;
+  margin-top: 2px;
+}
+
+.form-note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(247, 242, 234, 0.65);
+  text-align: center;
+}
+.form-note a {
+  color: var(--peach);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.form-note a:hover { border-bottom-color: var(--peach); }
+
+.form {
+  background: rgba(247, 242, 234, 0.05);
+  border: 1px solid rgba(247, 242, 234, 0.15);
+  border-radius: 24px;
+  padding: 44px 40px;
+  backdrop-filter: blur(10px);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+.form-field label {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--peach);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.form-field input,
+.form-field textarea,
+.form-field select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(247, 242, 234, 0.3);
+  color: var(--cream);
+  padding: 12px 0;
+  font-family: var(--sans);
+  font-size: 16px;
+  transition: border-color 0.3s;
+  outline: none;
+}
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  border-bottom-color: var(--peach);
+}
+.form-field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.form-field select option { background: var(--ink); color: var(--cream); }
+.form .btn {
+  margin-top: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+  .contact-details-grid { grid-template-columns: 1fr; gap: 0; }
+  .form { padding: 32px 26px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--cream);
+  padding: 70px 0 30px;
+  border-top: 1px solid var(--line);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+.footer-brand .logo { margin-bottom: 20px; }
+.footer-brand p {
+  font-family: var(--serif-italic);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--plum);
+  line-height: 1.5;
+  max-width: 280px;
+}
+.footer-col h5 {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--plum);
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a {
+  font-size: 15px;
+  color: var(--ink);
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--aubergine); }
+
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+  color: rgba(43, 27, 61, 0.6);
+}
+.socials { display: flex; gap: 12px; }
+.socials a {
+  width: 36px; height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--aubergine);
+  transition: all 0.3s;
+}
+.socials a:hover {
+  background: var(--aubergine);
+  color: var(--cream);
+  border-color: var(--aubergine);
+}
+
+@media (max-width: 800px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero load-in stagger */
+.hero .eyebrow,
+.hero h1,
+.hero p.lead,
+.hero-ctas,
+.hero-stats,
+.hero-art {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero h1 { animation-delay: 0.1s; }
+.hero p.lead { animation-delay: 0.25s; }
+.hero-ctas { animation-delay: 0.4s; }
+.hero-stats { animation-delay: 0.55s; }
+.hero-art { animation-delay: 0.2s; }
+
+@keyframes heroIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Skip rules for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Announcement bar -->
+<div class="announce">
+  Now welcoming children aged 5–14 <span>✦</span> Specialised SLD &amp; ADHD support in Guwahati
+</div>
+
+<!-- Header -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+        <!-- Mini orchid mark -->
+        <path d="M20 8 C16 8, 14 12, 16 16 C12 14, 8 16, 10 20 C8 22, 10 26, 14 24 C12 28, 16 32, 20 28 C24 32, 28 28, 26 24 C30 26, 32 22, 30 20 C32 16, 28 14, 24 16 C26 12, 24 8, 20 8 Z" fill="#B89DD6" opacity="0.85"/>
+        <circle cx="20" cy="20" r="3" fill="#4A2C68"/>
+        <path d="M20 28 Q20 34 22 38" stroke="#6B7A5A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div>
+        Saneksha
+        <small>Learning &amp; Support Centre</small>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#approach">Our Approach</a></li>
+      <li><a href="#parents">For Parents</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSccQDsCMTA8aOHNpSK7ZgkDXAbt5G0qaUQDabRpePGkNOBz3g/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn btn-primary">Book a Consultation</a>
+    <button class="mobile-toggle" aria-label="Menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="8" x2="21" y2="8"/>
+        <line x1="3" y1="16" x2="21" y2="16"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Specialised Remediation Centre</span>
+      <h1>Every child learns in their <em>own beautiful way.</em></h1>
+      <p class="lead">
+        Saneksha is a warm, evidence-based learning centre for children with Specific Learning Difficulties and ADHD. We meet each child exactly where they are — and walk beside them as they bloom.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSccQDsCMTA8aOHNpSK7ZgkDXAbt5G0qaUQDabRpePGkNOBz3g/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn btn-primary">Book a Free Consultation
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M8 3l4 4-4 4"/></svg>
+        </a>
+        <a href="#services" class="btn btn-outline">Explore Our Support</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="stat-num">5–14</span>
+          <span class="stat-label">Age range</span>
+        </div>
+        <div>
+          <span class="stat-num">1:1</span>
+          <span class="stat-label">Personalised plans</span>
+        </div>
+        <div>
+          <span class="stat-num">6+</span>
+          <span class="stat-label">Areas of support</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="hero-blob"></div>
+      <svg class="hero-svg" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="petal" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#E4D5F2"/>
+            <stop offset="60%" stop-color="#B89DD6"/>
+            <stop offset="100%" stop-color="#6B3F8E"/>
+          </radialGradient>
+          <radialGradient id="petalCenter" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#F4B89A"/>
+            <stop offset="100%" stop-color="#E89773"/>
+          </radialGradient>
+          <linearGradient id="stem" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#A8B89A"/>
+            <stop offset="100%" stop-color="#6B7A5A"/>
+          </linearGradient>
+          <radialGradient id="bubbleGrad" cx="35%" cy="35%">
+            <stop offset="0%" stop-color="#F1E8FA" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#B89DD6" stop-opacity="0.4"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Decorative leaves bottom -->
+        <g opacity="0.6">
+          <path d="M40 540 Q60 480 100 500 Q80 540 40 540 Z" fill="#A8B89A"/>
+          <path d="M460 560 Q440 500 400 520 Q420 560 460 560 Z" fill="#A8B89A"/>
+        </g>
+
+        <!-- Stem -->
+        <path d="M250 580 Q255 480 250 380 Q245 300 255 240" stroke="url(#stem)" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <!-- Leaves -->
+        <path d="M250 480 Q210 470 200 440 Q230 445 250 470 Z" fill="#A8B89A" opacity="0.85"/>
+        <path d="M252 420 Q290 410 305 380 Q275 388 252 410 Z" fill="#A8B89A" opacity="0.85"/>
+        <path d="M250 360 Q220 350 215 320 Q240 330 250 355 Z" fill="#A8B89A" opacity="0.85"/>
+
+        <!-- Orchid head -->
+        <g class="orchid" transform="translate(250, 200)">
+          <!-- Outer petals -->
+          <ellipse cx="0" cy="-50" rx="38" ry="62" fill="url(#petal)" opacity="0.9"/>
+          <ellipse cx="-70" cy="-10" rx="62" ry="38" fill="url(#petal)" opacity="0.9" transform="rotate(-30)"/>
+          <ellipse cx="70" cy="-10" rx="62" ry="38" fill="url(#petal)" opacity="0.9" transform="rotate(30)"/>
+          <ellipse cx="-40" cy="50" rx="48" ry="38" fill="url(#petal)" opacity="0.95" transform="rotate(-20)"/>
+          <ellipse cx="40" cy="50" rx="48" ry="38" fill="url(#petal)" opacity="0.95" transform="rotate(20)"/>
+          <!-- Inner lip -->
+          <ellipse cx="0" cy="20" rx="32" ry="42" fill="#6B3F8E" opacity="0.85"/>
+          <ellipse cx="0" cy="15" rx="22" ry="30" fill="url(#petalCenter)"/>
+          <!-- Center -->
+          <circle cx="0" cy="10" r="6" fill="#2B1B3D"/>
+          <circle cx="-3" cy="8" r="2" fill="#F7F2EA" opacity="0.7"/>
+
+          <!-- Bud -->
+          <g transform="translate(70, -90)">
+            <ellipse cx="0" cy="0" rx="14" ry="22" fill="url(#petal)" opacity="0.8"/>
+            <ellipse cx="0" cy="-6" rx="8" ry="14" fill="#B89DD6"/>
+          </g>
+        </g>
+
+        <!-- Floating thought bubbles -->
+        <g class="bubble-1">
+          <circle cx="120" cy="160" r="34" fill="url(#bubbleGrad)" opacity="0.7"/>
+          <!-- book icon inside -->
+          <g transform="translate(120, 160)" stroke="#4A2C68" stroke-width="1.5" fill="none">
+            <path d="M-12 -6 L-12 6 L0 8 L12 6 L12 -6 L0 -4 Z"/>
+            <line x1="0" y1="-4" x2="0" y2="8"/>
+          </g>
+        </g>
+
+        <g class="bubble-2">
+          <circle cx="400" cy="190" r="28" fill="url(#bubbleGrad)" opacity="0.7"/>
+          <!-- star -->
+          <path d="M400 178 L403 187 L412 187 L405 192 L408 201 L400 196 L392 201 L395 192 L388 187 L397 187 Z" fill="#E89773"/>
+        </g>
+
+        <g class="bubble-3">
+          <circle cx="80" cy="320" r="22" fill="url(#bubbleGrad)" opacity="0.7"/>
+          <!-- heart -->
+          <path d="M80 318 C77 314, 71 314, 71 320 C71 326, 80 332, 80 332 C80 332, 89 326, 89 320 C89 314, 83 314, 80 318 Z" fill="#B89DD6" opacity="0.9"/>
+        </g>
+
+        <!-- Sparkles -->
+        <g fill="#E89773">
+          <path class="sparkle" d="M350 100 L353 108 L361 111 L353 114 L350 122 L347 114 L339 111 L347 108 Z"/>
+          <path class="sparkle-2" d="M180 80 L182 85 L187 87 L182 89 L180 94 L178 89 L173 87 L178 85 Z" transform="scale(0.7)" />
+          <path class="sparkle-3" d="M440 360 L443 368 L451 371 L443 374 L440 382 L437 374 L429 371 L437 368 Z" transform="scale(0.6)"/>
+        </g>
+
+        <!-- Hand-drawn underline -->
+        <path d="M180 590 Q250 580 320 590" stroke="#B89DD6" stroke-width="2" fill="none" opacity="0.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual reveal">
+      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="aboutGlow" cx="50%" cy="40%">
+            <stop offset="0%" stop-color="#F1E8FA" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#B89DD6" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="400" height="500" fill="url(#aboutGlow)"/>
+
+        <!-- Watercolor child silhouette - sitting, thoughtful -->
+        <g transform="translate(200, 280)">
+          <!-- ground wash -->
+          <ellipse cx="0" cy="160" rx="140" ry="22" fill="#6B3F8E" opacity="0.35"/>
+          <!-- legs -->
+          <path d="M-40 140 Q-50 80 -30 30 L20 30 Q35 80 30 140 Z" fill="#4A2C68"/>
+          <!-- torso -->
+          <path d="M-32 30 Q-40 -20 -20 -50 L20 -50 Q40 -20 30 30 Z" fill="#6B3F8E"/>
+          <!-- arm bent -->
+          <path d="M-32 -10 Q-50 -30 -45 -60 Q-40 -80 -25 -75 Q-15 -65 -22 -50" fill="#4A2C68"/>
+          <!-- head -->
+          <circle cx="0" cy="-75" r="32" fill="#2B1B3D"/>
+          <!-- subtle face -->
+          <circle cx="-8" cy="-75" r="2" fill="#F7F2EA" opacity="0.4"/>
+        </g>
+
+        <!-- Floating elements -->
+        <circle cx="80" cy="100" r="8" fill="#F4B89A" opacity="0.7">
+          <animate attributeName="cy" values="100;90;100" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="320" cy="140" r="6" fill="#E4D5F2" opacity="0.9">
+          <animate attributeName="cy" values="140;130;140" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="340" cy="80" r="4" fill="#F1E8FA">
+          <animate attributeName="cy" values="80;70;80" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <path d="M60 60 L63 68 L71 71 L63 74 L60 82 L57 74 L49 71 L57 68 Z" fill="#F4B89A" opacity="0.8"/>
+
+        <!-- Leaves -->
+        <path d="M40 380 Q60 340 100 360 Q80 400 40 380 Z" fill="#A8B89A" opacity="0.7"/>
+        <path d="M360 420 Q340 380 300 400 Q320 440 360 420 Z" fill="#6B7A5A" opacity="0.7"/>
+      </svg>
+    </div>
+
+    <div class="about-text reveal">
+      <span class="section-eyebrow">A gentle space for growth</span>
+      <h2 class="section-title">Some children just need a <em>different kind of light</em> to bloom.</h2>
+
+      <p>
+        Saneksha was built on a quiet, stubborn belief: that every child is already capable. They just need someone patient enough to find the door they learn through — and brave enough to walk in with them.
+      </p>
+      <p>
+        We are a specialised remediation centre for children with Specific Learning Difficulties (SLD) and ADHD, ages 5 to 14. Our work is structured, evidence-based, and deeply personal. Each child is assessed individually, met without judgement, and supported with a plan made only for them.
+      </p>
+
+      <div class="beliefs">
+        <div class="belief"><span class="belief-dot"></span> Every child learns differently.</div>
+        <div class="belief"><span class="belief-dot"></span> Every child deserves confidence.</div>
+        <div class="belief"><span class="belief-dot"></span> Every child can succeed.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="wrap">
+    <div class="services-header reveal">
+      <div>
+        <span class="section-eyebrow">What we offer</span>
+        <h2 class="section-title">Care that meets your child <em>across every dimension</em> of learning.</h2>
+      </div>
+      <p>
+        Our programmes are designed for children whose minds work a little differently — and built around the truth that academics, emotion, attention, and identity all grow together. Choose the support that fits your child's path, or let us help you find it.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Card 1 — Academic -->
+      <article class="service-card wide reveal" style="--tint: #FBE5D6;">
+        <div class="service-icon" style="background: #FBE5D6;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2 4 Q12 2 22 4 L22 20 Q12 18 2 20 Z"/>
+            <line x1="12" y1="3" x2="12" y2="19"/>
+          </svg>
+        </div>
+        <h3>Academic Support</h3>
+        <p>Structured remediation in reading, spelling, writing, and mathematics, plus the study skills and time management children need to feel in command of their own learning.</p>
+        <div class="service-tags">
+          <span class="tag">Reading</span><span class="tag">Spelling</span><span class="tag">Writing</span><span class="tag">Study Skills</span>
+        </div>
+      </article>
+
+      <!-- Card 2 — Cognitive -->
+      <article class="service-card tall reveal" style="--tint: #DDE9F5;">
+        <div class="service-icon" style="background: #DDE9F5;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 3 C7 3 5 7 6 10 C4 11 4 14 6 15 C5 18 8 20 11 19 C12 21 15 21 16 19 C19 20 21 18 20 15 C22 14 22 11 20 10 C21 7 17 3 12 3 Z"/>
+            <path d="M12 8 V14 M9 11 H15"/>
+          </svg>
+        </div>
+        <h3>Cognitive &amp; Learning Skills</h3>
+        <p>Targeted work on the foundations beneath learning itself — auditory and visual processing, memory, attention, thinking skills, and organisation.</p>
+        <div class="service-tags">
+          <span class="tag">Processing</span><span class="tag">Memory</span><span class="tag">Attention</span><span class="tag">Executive Function</span>
+        </div>
+      </article>
+
+      <!-- Card 3 — Personalised -->
+      <article class="service-card med reveal" style="--tint: #E4EBDC;">
+        <div class="service-icon" style="background: #E4EBDC;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21 C4 16 8 14 12 14 C16 14 20 16 20 21"/>
+          </svg>
+        </div>
+        <h3>Personalised Learning</h3>
+        <p>Individualised Education Plans (IEPs) that grow with your child, with thoughtful transition support back into mainstream classrooms.</p>
+        <div class="service-tags"><span class="tag">IEP</span><span class="tag">Transition</span></div>
+      </article>
+
+      <!-- Card 4 — Therapy -->
+      <article class="service-card med reveal" style="--tint: #E4D5F2;">
+        <div class="service-icon" style="background: #E4D5F2;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M5 9 C5 6 7 4 10 5 C11 3 13 3 14 5 C17 4 19 6 19 9 C19 13 12 19 12 19 C12 19 5 13 5 9 Z"/>
+          </svg>
+        </div>
+        <h3>Therapy Support</h3>
+        <p>Occupational, speech, and behaviour therapy integrated alongside learning sessions for whole-child progress.</p>
+        <div class="service-tags"><span class="tag">OT</span><span class="tag">Speech</span><span class="tag">Behaviour</span></div>
+      </article>
+
+      <!-- Card 5 — Social/Emotional -->
+      <article class="service-card med reveal" style="--tint: #FCE0E4;">
+        <div class="service-icon" style="background: #FCE0E4;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="8" cy="9" r="3"/>
+            <circle cx="16" cy="9" r="3"/>
+            <path d="M3 19 C3 16 5 14 8 14 C11 14 13 16 13 19"/>
+            <path d="M11 19 C11 16 13 14 16 14 C19 14 21 16 21 19"/>
+          </svg>
+        </div>
+        <h3>Social &amp; Emotional Growth</h3>
+        <p>Counselling and Social Emotional Learning (SEL) so children feel seen, regulated, and proud of who they are.</p>
+        <div class="service-tags"><span class="tag">Counselling</span><span class="tag">SEL</span></div>
+      </article>
+
+      <!-- Card 6 — Vocational -->
+      <article class="service-card wide reveal" style="--tint: #DDE9F5;">
+        <div class="service-icon" style="background: #DDE9F5;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="3" y="7" width="18" height="13" rx="2"/>
+            <path d="M9 7 V5 C9 4 10 3 11 3 L13 3 C14 3 15 4 15 5 V7"/>
+            <line x1="3" y1="13" x2="21" y2="13"/>
+          </svg>
+        </div>
+        <h3>Life &amp; Vocational Skills</h3>
+        <p>For older learners, practical life skills and early vocational training that build independence, dignity, and a real sense of future — woven gently into everything we do.</p>
+        <div class="service-tags"><span class="tag">Independence</span><span class="tag">Vocational Training</span><span class="tag">Wellness</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Approach (dark) -->
+<section class="approach" id="approach">
+  <div class="wrap">
+    <span class="section-eyebrow reveal">Our approach</span>
+    <h2 class="section-title reveal">Three quiet steps. <em>One growing child.</em></h2>
+    <p class="section-intro reveal">Progress at Saneksha isn't dramatic. It's small, honest, repeated. A page read without flinching. A sum finished without a meltdown. A child who suddenly says, "I can do this." That's the work.</p>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">i.</div>
+        <h3>Understand</h3>
+        <p>We begin with listening. Through a thorough assessment and unhurried conversations with you, we learn your child's strengths, struggles, interests, and the way their mind likes to move.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">ii.</div>
+        <h3>Support</h3>
+        <p>We build a plan that is structured but never rigid — gentle, evidence-based, and shaped around the child in front of us. Therapies and learning are integrated, not stacked.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">iii.</div>
+        <h3>Grow</h3>
+        <p>We focus on small, steady progress. We celebrate it loudly. And we share it with you regularly so the home becomes part of the classroom and the classroom part of the home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section id="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="reveal">
+        <span class="section-eyebrow">Why families choose us</span>
+        <h2 class="section-title">What makes Saneksha <em>feel different.</em></h2>
+        <p style="color: rgba(43, 27, 61, 0.75); font-size: 17px; line-height: 1.7;">
+          A child who has been told they're "behind" carries that word for years. Our work is partly academic — and partly the slow, deliberate undoing of that word.
+        </p>
+
+        <div class="pillars">
+          <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="8" r="4"/>
+              <circle cx="6" cy="12" r="3"/>
+              <circle cx="18" cy="12" r="3"/>
+            </svg>
+            <h4>Experienced Professionals</h4>
+            <p>Specialists trained in remediation, therapy, and child psychology.</p>
+          </div>
+          <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="5" y="3" width="14" height="18" rx="2"/>
+              <path d="M9 11 L11 13 L15 9"/>
+            </svg>
+            <h4>Evidence-Based Practices</h4>
+            <p>Methods grounded in research, not trend or guesswork.</p>
+          </div>
+          <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M12 4 L14 9 L19 10 L15 13 L16 18 L12 16 L8 18 L9 13 L5 10 L10 9 Z"/>
+            </svg>
+            <h4>Parent Partnership</h4>
+            <p>You are an active collaborator, not an outside observer.</p>
+          </div>
+          <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M4 12 C4 7 8 4 12 4 C16 4 20 7 20 12 C20 17 16 20 12 20 C8 20 4 17 4 12 Z"/>
+              <circle cx="9" cy="11" r="1" fill="currentColor"/>
+              <circle cx="15" cy="11" r="1" fill="currentColor"/>
+              <path d="M9 15 Q12 17 15 15"/>
+            </svg>
+            <h4>Child-First Environment</h4>
+            <p>Safe, sensory-aware, and built for how children actually feel.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-card reveal">
+        <p class="quote-text">We don't define children by their challenges. We help them discover their strengths — and then we get out of the way.</p>
+        <span class="quote-attr">— The Saneksha Philosophy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- For Parents -->
+<section class="parents" id="parents">
+  <div class="wrap">
+    <div class="parents-content reveal">
+      <span class="section-eyebrow">A note for parents</span>
+      <h2 class="section-title">If you are reading this <em>tired,</em> we see you.</h2>
+      <p class="parents-letter">
+        You may have spent years explaining your child to teachers, doctors, and family members. You may have been told to be patient, or to be firm, or to wait it out. You may be exhausted from advocating for someone who can't yet advocate for themselves.
+      </p>
+      <p class="sub">
+        We won't pretend to know your child yet. But we know how to listen carefully, speak honestly, and build something real with you. Reach out — even just to talk. There's no cost, no commitment, and no judgement on the other end of the line.
+      </p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSccQDsCMTA8aOHNpSK7ZgkDXAbt5G0qaUQDabRpePGkNOBz3g/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn btn-primary">Start a Conversation</a>
+      <div class="signature">
+        With warmth,
+        <small>The Saneksha Team</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="reveal">
+        <span class="section-eyebrow">Frequently asked</span>
+        <h2 class="section-title">Honest answers to the <em>questions you're already asking.</em></h2>
+        <p style="color: rgba(43, 27, 61, 0.7); font-size: 16px; line-height: 1.7; margin-top: 24px;">
+          Don't see your question here? We'd much rather you ask us directly. Every family's situation is different, and a quick conversation is often more useful than a generic answer.
+        </p>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q">
+            What age groups do you support?
+            <span class="faq-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
+          </button>
+          <div class="faq-a">We work with children aged 5 to 14 who need support with learning, attention, confidence, or school-related challenges. For older learners, we offer life and vocational skills programmes that grow with them.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Do you work with children with ADHD or learning differences?
+            <span class="faq-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
+          </button>
+          <div class="faq-a">Yes. Saneksha is a specialised remediation centre for children with Specific Learning Difficulties (SLD) including dyslexia, dyscalculia, and dysgraphia, as well as ADHD. We provide structured, evidence-based interventions tailored to each child.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            How do sessions work?
+            <span class="faq-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
+          </button>
+          <div class="faq-a">After an initial assessment, we build an Individualised Education Plan (IEP) for your child. Sessions are typically one-on-one or in very small groups, and may focus on academics, attention, social-emotional skills, or therapy — depending on what your child needs most. Frequency and duration are decided together.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can parents speak with you before starting?
+            <span class="faq-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
+          </button>
+          <div class="faq-a">Absolutely — and we strongly encourage it. A free consultation lets us understand your child, explain how we work, and lets you see whether we're the right fit before any commitment.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Will my child continue at their regular school?
+            <span class="faq-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
+          </button>
+          <div class="faq-a">Yes — our programmes are designed to complement mainstream schooling, not replace it. Many of our children attend Saneksha alongside their school, and we often coordinate with their teachers to support consistency.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            How long does it take to see progress?
+            <span class="faq-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
+          </button>
+          <div class="faq-a">Every child is different. Some show shifts in confidence within weeks; others take longer for academic gains to become visible. We provide regular progress tracking and share updates with you so you always know how your child is growing.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="section-eyebrow">Let's begin</span>
+        <h2 class="section-title">A short message can be the <em>start of something quietly important.</em></h2>
+        <p>
+          Tell us a little about your child. We'll get back to you within one working day to arrange a free, no-pressure conversation. You can also reach us directly on any of the numbers or email addresses below.
+        </p>
+
+        <div class="contact-details-grid">
+          <div class="contact-detail">
+            <div class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.94.7 2.86a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.21-1.27a2 2 0 0 1 2.11-.45c.92.34 1.88.57 2.86.7A2 2 0 0 1 22 16.92Z"/></svg>
+            </div>
+            <div>
+              <div class="label">Phone</div>
+              <a href="tel:+916002954576" class="value">+91 60029 54576</a>
+              <a href="tel:+918633776625" class="value">+91 86337 76625</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7 L12 13 L21 7"/></svg>
+            </div>
+            <div>
+              <div class="label">Email</div>
+              <a href="mailto:sanekshasupportcentre@gmail.com" class="value">sanekshasupportcentre@gmail.com</a>
+              <a href="mailto:mrinalichowdhary@gmail.com" class="value">mrinalichowdhary@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="label">Visit</div>
+              <div class="value">Guwahati, Assam</div>
+              <div class="value-sub">Address shared on inquiry</div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 14"/></svg>
+            </div>
+            <div>
+              <div class="label">Response Time</div>
+              <div class="value">Within one working day</div>
+              <div class="value-sub">Mon – Sat</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form
+        class="form reveal"
+        action="https://formsubmit.co/sanekshasupportcentre@gmail.com"
+        method="POST"
+      >
+        <!-- FormSubmit configuration -->
+        <input type="hidden" name="_subject" value="New Inquiry from Saneksha Website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>Parent Name</label>
+            <input type="text" name="Parent Name" required>
+          </div>
+          <div class="form-field">
+            <label>Phone</label>
+            <input type="tel" name="Phone" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>Email</label>
+            <input type="email" name="Email" required>
+          </div>
+          <div class="form-field">
+            <label>Child's Age</label>
+            <select name="Child's Age" required>
+              <option value="">Select</option>
+              <option>5 – 7 years</option>
+              <option>8 – 10 years</option>
+              <option>11 – 14 years</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label>What brings you here?</label>
+          <textarea name="Message" placeholder="Tell us a little about your child — what you're noticing, what worries you, what you hope for. Take your time." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-peach">Send Inquiry
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h8M8 3l4 4-4 4"/></svg>
+        </button>
+
+        <p class="form-note">
+          Prefer to book directly? <a href="https://docs.google.com/forms/d/e/1FAIpQLSccQDsCMTA8aOHNpSK7ZgkDXAbt5G0qaUQDabRpePGkNOBz3g/viewform?usp=publish-editor" target="_blank" rel="noopener">Use our consultation booking form →</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+            <path d="M20 8 C16 8, 14 12, 16 16 C12 14, 8 16, 10 20 C8 22, 10 26, 14 24 C12 28, 16 32, 20 28 C24 32, 28 28, 26 24 C30 26, 32 22, 30 20 C32 16, 28 14, 24 16 C26 12, 24 8, 20 8 Z" fill="#B89DD6" opacity="0.85"/>
+            <circle cx="20" cy="20" r="3" fill="#4A2C68"/>
+            <path d="M20 28 Q20 34 22 38" stroke="#6B7A5A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+          <div>
+            Saneksha
+            <small>Learning &amp; Support Centre</small>
+          </div>
+        </a>
+        <p>Nurturing every unique bloom — one patient, careful day at a time.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#approach">Our Approach</a></li>
+          <li><a href="#parents">For Parents</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Programmes</h5>
+        <ul>
+          <li><a href="#services">Academic Support</a></li>
+          <li><a href="#services">Cognitive Skills</a></li>
+          <li><a href="#services">Therapy Support</a></li>
+          <li><a href="#services">Vocational Skills</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="tel:+916002954576">+91 60029 54576</a></li>
+          <li><a href="tel:+918633776625">+91 86337 76625</a></li>
+          <li><a href="mailto:sanekshasupportcentre@gmail.com">sanekshasupportcentre@gmail.com</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSccQDsCMTA8aOHNpSK7ZgkDXAbt5G0qaUQDabRpePGkNOBz3g/viewform?usp=publish-editor" target="_blank" rel="noopener">Book a consultation</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Saneksha Learning &amp; Support Centre. All rights reserved.</span>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.58 7.19a2.5 2.5 0 0 0-1.76-1.77C18.25 5 12 5 12 5s-6.25 0-7.82.42A2.5 2.5 0 0 0 2.42 7.19 26.05 26.05 0 0 0 2 12a26 26 0 0 0 .42 4.81 2.5 2.5 0 0 0 1.76 1.77C5.75 19 12 19 12 19s6.25 0 7.82-.42a2.5 2.5 0 0 0 1.76-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.42-4.81zM10 15V9l5.2 3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Open first FAQ by default
+  document.querySelector('.faq-item')?.classList.add('open');
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Smooth scroll for anchor links handled by CSS scroll-behavior
+</script>
+
+</body>
+</html>
