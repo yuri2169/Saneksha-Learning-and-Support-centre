@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Saneksha Learning &amp; Support Centre — Nurturing every unique bloom</title>
 <meta name="description" content="A specialised remediation centre in Guwahati for children with Specific Learning Difficulties (SLD) and ADHD, ages 5–14. Warm, evidence-based support that helps every child bloom." />
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..800,0..100&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600&display=swap" rel="stylesheet">
@@ -235,15 +235,57 @@ header {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  padding: 90px 0 120px;
+  padding: 120px 0 140px;
   overflow: hidden;
+  min-height: 720px;
+  display: flex;
+  align-items: center;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 80px;
-  align-items: center;
+/* Full-bleed butterfly video background */
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* The video has true alpha transparency (WebM VP9 alpha channel).
+     Cap opacity so the watercolor butterfly always reads as dreamy and
+     painterly — full opacity exposes AI rendering flaws. */
+  opacity: 0.6;
+}
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    /* Soft cream wash on the left for text readability */
+    linear-gradient(90deg,
+      rgba(247, 242, 234, 0.92) 0%,
+      rgba(247, 242, 234, 0.75) 30%,
+      rgba(247, 242, 234, 0.25) 55%,
+      rgba(247, 242, 234, 0) 75%
+    ),
+    /* Subtle bottom fade so the section meets the next one smoothly */
+    linear-gradient(180deg,
+      transparent 60%,
+      rgba(247, 242, 234, 0.6) 100%
+    );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.hero-text {
+  max-width: 620px;
 }
 
 .eyebrow {
@@ -280,7 +322,7 @@ header {
 .hero p.lead {
   font-size: 19px;
   line-height: 1.65;
-  color: rgba(43, 27, 61, 0.78);
+  color: rgba(43, 27, 61, 0.85);
   max-width: 540px;
   margin-bottom: 40px;
 }
@@ -315,49 +357,6 @@ header {
   font-weight: 600;
 }
 
-/* Hero illustration */
-.hero-art {
-  position: relative;
-  height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-blob {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 45%, var(--lavender) 0%, var(--lavender-mist) 40%, transparent 75%);
-  filter: blur(20px);
-}
-.hero-logo {
-  position: relative;
-  width: 100%;
-  max-width: 580px;
-  height: auto;
-  display: block;
-  z-index: 2;
-  animation: float 7s ease-in-out infinite;
-  transform-origin: center;
-  filter: drop-shadow(0 18px 40px rgba(74, 44, 104, 0.12));
-  /* Blend the cream video bg into the cream page bg */
-  mix-blend-mode: multiply;
-  /* Crop bottom-right corner where watermark lives */
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 85%, 85% 100%, 0 100%);
-}
-.hero-decor {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-.hero-svg {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-14px) rotate(-1deg); }
@@ -371,7 +370,6 @@ header {
   50% { opacity: 1; }
 }
 
-.orchid { animation: float 7s ease-in-out infinite; transform-origin: center bottom; } /* legacy, unused */
 .bubble-1 { animation: drift 6s ease-in-out infinite; }
 .bubble-2 { animation: drift 8s ease-in-out infinite 1s; }
 .bubble-3 { animation: drift 7s ease-in-out infinite 2s; }
@@ -380,10 +378,20 @@ header {
 .sparkle-3 { animation: shimmer 3s ease-in-out infinite 1.6s; }
 
 @media (max-width: 900px) {
-  .hero { padding: 50px 0 70px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-  .hero-art { height: 380px; order: -1; }
-  .hero-logo { max-width: 340px; }
+  .hero {
+    padding: 70px 0 90px;
+    min-height: auto;
+  }
+  .hero-video-overlay {
+    background:
+      /* On mobile, fade from top so text up top is readable, video shows below */
+      linear-gradient(180deg,
+        rgba(247, 242, 234, 0.85) 0%,
+        rgba(247, 242, 234, 0.65) 40%,
+        rgba(247, 242, 234, 0.35) 70%,
+        rgba(247, 242, 234, 0.5) 100%
+      );
+  }
   .hero-stats { gap: 28px; flex-wrap: wrap; }
 }
 
@@ -1153,8 +1161,7 @@ footer {
 .hero h1,
 .hero p.lead,
 .hero-ctas,
-.hero-stats,
-.hero-art {
+.hero-stats {
   opacity: 0;
   transform: translateY(20px);
   animation: heroIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -1163,7 +1170,6 @@ footer {
 .hero p.lead { animation-delay: 0.25s; }
 .hero-ctas { animation-delay: 0.4s; }
 .hero-stats { animation-delay: 0.55s; }
-.hero-art { animation-delay: 0.2s; }
 
 @keyframes heroIn {
   to { opacity: 1; transform: translateY(0); }
@@ -1174,6 +1180,13 @@ footer {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+  /* For users who prefer reduced motion, show the poster frame instead of animating */
+  .hero-video { display: none; }
+  .hero-video-wrap {
+    background-image: url('hero-butterfly-poster.jpg');
+    background-size: cover;
+    background-position: center;
   }
 }
 </style>
@@ -1189,7 +1202,7 @@ footer {
 <header>
   <div class="wrap nav">
     <a href="#" class="logo">
-      <img src="logo-full-transparent.png" alt="" class="logo-mark-img">
+      <img src="logo-mark.png" alt="" class="logo-mark-img">
       <div>
         Saneksha
         <small>Learning &amp; Support Centre</small>
@@ -1214,8 +1227,28 @@ footer {
 
 <!-- Hero -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
+  <!-- Full-bleed butterfly video background -->
+  <div class="hero-video-wrap" aria-hidden="true">
+    <video
+      class="hero-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+      poster="hero-butterfly-poster.jpg"
+    >
+      <!-- WebM with true alpha transparency for Chrome/Firefox/Edge/Android -->
+      <source src="hero-butterfly.webm" type="video/webm">
+      <!-- MP4 fallback (cream baked in) for Safari/iOS -->
+      <source src="hero-butterfly.mp4" type="video/mp4">
+    </video>
+    <!-- Soft cream gradient overlay for text readability -->
+    <div class="hero-video-overlay"></div>
+  </div>
+
+  <div class="wrap hero-content">
+    <div class="hero-text">
       <span class="eyebrow">Specialised Remediation Centre</span>
       <h1>Every child learns in their <em>own beautiful way.</em></h1>
       <p class="lead">
@@ -1241,46 +1274,6 @@ footer {
           <span class="stat-label">Areas of support</span>
         </div>
       </div>
-    </div>
-
-    <div class="hero-art">
-      <div class="hero-blob"></div>
-      <video src="" class="hero-logo" autoplay loop muted playsinline aria-label="Animated neurodiversity infinity symbol"></video>
-      <!-- Floating decorative bubbles around the logo -->
-      <svg class="hero-decor" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <radialGradient id="bubbleGrad" cx="35%" cy="35%">
-            <stop offset="0%" stop-color="#F1E8FA" stop-opacity="0.95"/>
-            <stop offset="100%" stop-color="#B89DD6" stop-opacity="0.45"/>
-          </radialGradient>
-        </defs>
-
-        <!-- Floating thought bubbles -->
-        <g class="bubble-1">
-          <circle cx="70" cy="130" r="34" fill="url(#bubbleGrad)"/>
-          <g transform="translate(70, 130)" stroke="#4A2C68" stroke-width="1.5" fill="none">
-            <path d="M-12 -6 L-12 6 L0 8 L12 6 L12 -6 L0 -4 Z"/>
-            <line x1="0" y1="-4" x2="0" y2="8"/>
-          </g>
-        </g>
-
-        <g class="bubble-2">
-          <circle cx="430" cy="180" r="28" fill="url(#bubbleGrad)"/>
-          <path d="M430 168 L433 177 L442 177 L435 182 L438 191 L430 186 L422 191 L425 182 L418 177 L427 177 Z" fill="#E89773"/>
-        </g>
-
-        <g class="bubble-3">
-          <circle cx="60" cy="380" r="22" fill="url(#bubbleGrad)"/>
-          <path d="M60 378 C57 374, 51 374, 51 380 C51 386, 60 392, 60 392 C60 392, 69 386, 69 380 C69 374, 63 374, 60 378 Z" fill="#B89DD6" opacity="0.9"/>
-        </g>
-
-        <!-- Sparkles -->
-        <g fill="#E89773">
-          <path class="sparkle" d="M380 110 L383 118 L391 121 L383 124 L380 132 L377 124 L369 121 L377 118 Z"/>
-          <path class="sparkle-2" d="M125 70 L127 75 L132 77 L127 79 L125 84 L123 79 L118 77 L123 75 Z"/>
-          <path class="sparkle-3" d="M450 400 L453 408 L461 411 L453 414 L450 422 L447 414 L439 411 L447 408 Z" transform="scale(0.7) translate(120, 120)"/>
-        </g>
-      </svg>
     </div>
   </div>
 </section>
@@ -1742,7 +1735,7 @@ footer {
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo">
-          <img src="logo-full-transparent.png" alt="" class="logo-mark-img">
+          <img src="logo-mark.png" alt="" class="logo-mark-img">
           <div>
             Saneksha
             <small>Learning &amp; Support Centre</small>
@@ -1794,6 +1787,14 @@ footer {
 </footer>
 
 <script>
+  // Respect reduced motion preferences — pause hero video for users who prefer less motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.hero-video').forEach(v => {
+      v.pause();
+      v.removeAttribute('autoplay');
+    });
+  }
+
   // FAQ accordion
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
